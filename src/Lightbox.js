@@ -1,9 +1,11 @@
 import React, { Fragment, useEffect, useRef } from "react";
 import styled from "styled-components";
+import { setBoxShadow } from "./helpers/styled.util";
+import { BOX_SHADOW } from "./styles/common";
 
 const boxWidth = 400;
 
-const Container = styled.div`
+const Overlay = styled.div`
   position: fixed;
   width: 100%;
   height: 100%;
@@ -13,11 +15,12 @@ const Container = styled.div`
 
 const Box = styled.div`
   position: fixed;
-  margin: 0 calc(50% - ${boxWidth / 2}px) auto;
-  margin-top: 120px;
   width: ${boxWidth}px;
   height: ${boxWidth}px;
   background: white;
+  margin: 0 calc(50% - ${boxWidth / 2}px) auto;
+  margin-top: 120px;
+  ${setBoxShadow(BOX_SHADOW)}
 `;
 
 const BoxImage = styled.div`
@@ -47,7 +50,7 @@ function Lightbox(props) {
 
   return (
     <Fragment>
-      <Container />
+      <Overlay />
       <Box ref={ref}>
         <BoxImage selected={props.selected} />
       </Box>

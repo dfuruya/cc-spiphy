@@ -6,9 +6,7 @@ import Search from "./Search";
 import Gifs from "./Gifs";
 import Lightbox from "./Lightbox";
 
-const Heading = styled.h1`
-  color: white;
-`;
+const Heading = styled.h1``;
 
 export default function App() {
   const [gifs, setGifs] = useState();
@@ -23,7 +21,6 @@ export default function App() {
   }
 
   function handleClickOutside() {
-    console.log("clicked outside");
     setCurSelected("");
   }
 

@@ -20,6 +20,7 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
+  cursor: pointer;
   font-size: 20px;
   padding: 10px;
 `;
